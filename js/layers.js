@@ -985,7 +985,7 @@ addLayer("si", {
 addLayer("e", {
     name: "emerald", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() {
         return {
             unlocked: false,
@@ -1103,7 +1103,8 @@ addLayer("a", {
             unlocked() { return hasUpgrade(this.layer, this.id - 1) }
         },
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 4, // Row the layer is in on the tree (0 is the first row)
+    displayRow: 0,
     hotkeys: [
         { key: "a", description: "A: Reset for amethyst", onPress() { if (canReset(this.layer)) doReset(this.layer) }, unlocked() { return hasUpgrade('r', 15) } },
     ],
@@ -1158,7 +1159,8 @@ addLayer("o", {
             unlocked() { return hasUpgrade(this.layer, this.id - 1) }
         },
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 4, // Row the layer is in on the tree (0 is the first row)
+    displayRow: 0,
     hotkeys: [
         { key: "o", description: "O: Reset for opal", onPress() { if (canReset(this.layer)) doReset(this.layer) }, unlocked() { return hasUpgrade('s', 21) } },
     ],
@@ -1212,7 +1214,8 @@ addLayer("m", {
             unlocked() { return hasUpgrade(this.layer, this.id - 1) }
         },
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 4, // Row the layer is in on the tree (0 is the first row)
+    displayRow: 0,
     hotkeys: [
         { key: "m", description: "M: Reset for moonstone", onPress() { if (canReset(this.layer)) doReset(this.layer) }, unlocked() { return hasUpgrade('a', 12) } },
     ],
@@ -1262,7 +1265,8 @@ addLayer("d", {
             cost: new Decimal(1),
         }
     },
-    row: 3, // Row the layer is in on the tree (0 is the first row)
+    row: 5, // Row the layer is in on the tree (0 is the first row)
+    displayRow: 3,
     hotkeys: [
         { key: "d", description: "D: Reset for diamond", onPress() { if (canReset(this.layer)) doReset(this.layer) }, unlocked() { return hasUpgrade('m', 11) } },
     ],
